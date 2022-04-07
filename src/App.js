@@ -1292,7 +1292,7 @@ function App() {
      console.log(publicMintStart)
      console.log(maxPerMint)
      console.log(mintInput)
-     console.log(totalSupply)
+     console.log(Date.now() + 259200)
   
     }
   const claimNFTs = async() => {
@@ -1372,14 +1372,14 @@ function App() {
       setconfig()
     }
   };
-  const renderer = ({ hours, minutes, seconds, completed }) => {
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
     console.log(hours,minutes,seconds)
     if (completed) {
       // Render a completed state
-      return <div style={{color:'white'}}>DONE AND DUSTED</div>;
+      return <div style={{color:'white', fontSize:'50px'}}>DONE AND DUSTED</div>;
     } else {
       // Render a countdown
-      return <span style={{color:'white'}}>{hours}:{minutes}:{seconds}</span>;
+      return <div style={{display:'flex',color:'white', fontSize:'50px'}}>{days}: {hours}:{minutes}:{seconds}</div>;
     }
   };
   const getConfig = async () => {
@@ -1414,12 +1414,14 @@ function App() {
         height="10%"
       >
            <s.Container jc={"center"} ai={"center"} style={{display:"flex",justifyContent:'flex-end',alignItems:'flex-end', flexDirection:"row"}}>
-        <SocialIcon network="twitter" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
-        <SocialIcon network="discord" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
-        <SocialIcon network="facebook" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
-        <SocialIcon network="telegram" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
-        <SocialIcon network="opensea" fgColor="white" bgColor="white" style={{margin:"10px"}}/>
-        
+        <SocialIcon network="twitter" fgColor="#1DA1F2" bgColor="white" style={{margin:"10px"}}/>
+        <SocialIcon network="discord" fgColor="#7289DA" bgColor="white" style={{margin:"10px"}}/>
+        <SocialIcon network="facebook" fgColor="#7289DA" bgColor="white" style={{margin:"10px"}}/>
+        <SocialIcon network="telegram" fgColor="#229ED9" bgColor="white" style={{margin:"10px"}}/>
+       <div>
+          <img  style={{margin:'4px', width:'55px' ,height:'55px'}} src="https://i.ibb.co/dBdqpsd/Logomark-White.png"/>
+         </div>
+ 
         </s.Container>
         <s.SpacerSmall />
         <ResponsiveWrapper style={{  alignContent:'center',
@@ -1501,9 +1503,9 @@ letterSpacing:'10px',
   src="/config/images/back.jpeg" width='35%'>
   </img>
 </div>
-<div style={{display:'flex'}}>
-<Countdown style={{color:'white', fontSize:'50px'}} renderer={renderer} date={Date.now() + 10000}/>
-                     </div>
+<Countdown  renderer={renderer} date={1649389997603}/>
+
+                   
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
                 <s.TextTitle
