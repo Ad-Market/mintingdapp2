@@ -1,0 +1,18 @@
+.tickerCell {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    > .tickerCellValue {
+        font-size: 3rem;
+    color:aliceblue;
+
+    }
+    
+    > .tickerCellLabel {
+    color:aliceblue;
+
+        font-style: italic;
+    }
+}
