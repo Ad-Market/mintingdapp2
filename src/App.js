@@ -1413,6 +1413,13 @@ function App() {
         image={null}
         height="10%"
       >
+         <s.Container
+        flex={1}
+        ai={"center"}
+        jc={"center"}
+        image="https://i.ibb.co/dBdqpsd/Logomark-White.png"
+        height="10%"
+      ></s.Container>
            <s.Container jc={"center"} ai={"center"} style={{display:"flex",justifyContent:'flex-end',alignItems:'flex-end', flexDirection:"row"}}>
         <SocialIcon network="twitter" fgColor="#1DA1F2" bgColor="white" style={{margin:"10px"}}/>
         <SocialIcon network="discord" fgColor="#7289DA" bgColor="white" style={{margin:"10px"}}/>
